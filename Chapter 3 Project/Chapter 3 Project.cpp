@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    const int sugar = 1.5;
-    const int butter = 1.0;
-    const int flour = 2.75;
-    int cookies;
+    const double sugar = 1.5;
+    const double butter = 1.0;
+    const double flour = 2.75;
+    double cookies;
 
     cout << "How many cookies would you like? \n";
 
