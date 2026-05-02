@@ -1,24 +1,35 @@
 #include <iostream>
-#include <random>
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
 int main()
 {
-    // Randomness
-    random_device engine;
-    uniform_int_distribution<int> randomInt(0, 100);
+    double rate;
+    double times;
+    double principal;
+    double amount;
 
-    // Get numbers & solve
-    int randFirst = randomInt(engine);
-    int randSecond = randomInt(engine);
 
-    int solved = randFirst + randSecond;
+    cout << "What is your interest rate? ";
+    cin >> rate;
+    cout << "How many times will it compound? ";
+    cin >> times;
+    cout << "What is your principal? ";
+    cin >> principal;
 
-    // OUtput & wait
-    cout << "Please solve " << randFirst << " + " << randSecond << "\n";
-    cin.get();
-    cout << solved;
+
+    rate = rate / 100;
+
+    amount = principal * pow(1+(rate/times),times);
+
+
+    cout << "Interest Rate:" << setw(25) << rate <<"%" << endl;
+    cout << "Times Compounded:" << setw(22) << times << endl;
+    cout << "Principal:" << setw(25) << "$" << principal << endl;
+    cout << "Interest:" << setw(25) << setprecision(2) << fixed << "$" << amount - principal << endl;
+    cout << "Amount:" << setw(25) << setprecision(2) << fixed << "$" << amount << endl;
 
     return 0;
 }
