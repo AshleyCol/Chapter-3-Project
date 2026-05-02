@@ -25,7 +25,7 @@ int main()
     amount = principal * pow(1+(rate/times),times);
 
 
-    cout << "Interest Rate:" << setw(25) << rate <<"%" << endl;
+    cout << "Interest Rate:" << setw(25) << rate *100<<"%" << endl;
     cout << "Times Compounded:" << setw(22) << times << endl;
     cout << "Principal:" << setw(25) << "$" << principal << endl;
     cout << "Interest:" << setw(25) << setprecision(2) << fixed << "$" << amount - principal << endl;
